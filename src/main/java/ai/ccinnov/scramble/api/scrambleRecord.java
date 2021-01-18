@@ -9,10 +9,13 @@ public class scrambleRecord {
         super();
         this.alias = alias;
         this.inbox = inbox;
+        //this.id = id;
     }
 
     private String alias;
     private String inbox;
+
+    //private Integer id;
 
     @Override
     public String toString(){
@@ -37,6 +40,7 @@ public class scrambleRecord {
     public void setInbox(String inbox) {
         this.inbox = inbox;
     }
+
 
 
 
