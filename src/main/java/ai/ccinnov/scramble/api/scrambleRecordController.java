@@ -28,6 +28,7 @@ import org.springframework.web.servlet
 public class scrambleRecordController {
     @Autowired
     private scrambleRecordDAO _scrambleRecordDAO;
+    private dbPostHandler handler = new dbPostHandler();
 
     //GET req
     @GetMapping(path = "/",produces = "application/json")
@@ -43,6 +44,9 @@ public class scrambleRecordController {
 //        record.setId(id);
 
         _scrambleRecordDAO.addScrambleRecord(record);
+        comboPost cp = new comboPost();
+        cp.setCombo(record.getAlias(),record.getInbox());
+        handler.sendCombo(cp);
 
         URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/").buildAndExpand().toUri();
 
