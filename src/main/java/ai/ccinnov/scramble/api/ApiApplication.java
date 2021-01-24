@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApiApplication {
 
     public static void main(String[] args) {
+        dbInterface _dbInterface = new dbInterface();
         SpringApplication.run(ApiApplication.class, args);
+        _dbInterface.initDbConnection();
     }
 
 }
