@@ -44,6 +44,7 @@ public class scrambleRecordController {
 //        record.setId(id);
 
         _scrambleRecordDAO.addScrambleRecord(record);
+
         comboPost cp = new comboPost();
         cp.setCombo(record.getAlias(),record.getInbox());
         handler.sendCombo(cp);

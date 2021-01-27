@@ -10,6 +10,8 @@ public class ApiApplication {
         dbInterface _dbInterface = new dbInterface();
         SpringApplication.run(ApiApplication.class, args);
         _dbInterface.initDbConnection();
+
+        //close db connection
     }
 
 }
